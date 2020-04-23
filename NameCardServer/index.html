@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="author" content="Capt Ar Kar Myo">
+	<title>NameCard</title>
+	
+
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="css/mdb.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Material Design Bootstrap -->
+	
+	<!-- Our custom styles (optional) -->
+	<link rel="stylesheet" href="css/teamcs.css">
+	<!-- <link rel="icon" href="images/app_icon.png" type="image/gif" sizes="16x16"> -->
+	<style>
+		.my_card{
+			margin-bottom: 20px;
+		}
+		.no_link{
+			text-decoration: none;
+		}
+		@font-face 
+		{
+		  font-family: 'Pyidaungsu';
+		  src: URL('font/Pyidaungsu.ttf') format('truetype');
+		}
+		body
+		{
+			font-family: Pyidaungsu;
+		}
+		.foot
+		{
+			text-align: center;
+			margin-top: 0%;
+		}
+		.btn
+		{
+			color: white;
+		}
+		.h3
+		{
+			color: #047CBA;
+		}
+		.newaccountbtn,.haveaccount
+		{
+			color: #FF7043;
+		}
+		.newaccountbtn:hover,.haveaccount:hover
+		{
+			cursor: pointer;
+			font-weight: bold;
+		}
+		.registerdiv
+		{
+			display: none;
+		}
+	</style>
+</head>
+
+<body class="fixed-sn white-skin">
+
+	<!-- Main Navigation -->
+	<header>
+		
+		<!-- Navbar -->
+		<nav class="navbar fixed-top navbar-expand-lg scrolling-navbar double-nav" id="nav_id">
+			<!-- SideNav slide-out button -->
+			<div class="float-left"> <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars" style="display: none;"></i></a>
+			</div>
+			<!-- Breadcrumb -->
+			<div class="title_text mr-auto align-center text-center">
+				<h4 id="header_id">NameCard Admin</h4>
+			</div>
+		</nav>
+		
+	</header>
+	<!-- Main Navigation -->
+
+	<!-- Main layout -->
+	<main>
+		<div class="container-fluid">
+			<!-- Section: Intro -->
+			<section id="intro_section">
+
+				<div class="card">					
+					<div class="card-body logindiv">
+						<center><span class="title h3 my-4">ဝင်ရောက်ရန်</span></center>
+						 <div class="modal-body mx-3">
+						 	<!-- <form id='loginForm'> -->
+						        <div class="md-form mb-5">
+						          	<i class="fas fa-user prefix grey-text"></i>
+						          	<input type="text" id="username" name="username" class="form-control validate" placeholder="အမည်">						          	
+						        </div>
+						   
+
+							    <div class="md-form mb-4">
+						          <i class="fas fa-lock prefix grey-text"></i>
+						          <input type="password" id="password" name="password" class="form-control validate" placeholder="စကားဝှက်">
+						        </div>
+
+						        <div class="modal-footer d-flex justify-content-center">
+							        <!-- <button class="btn btn-deep-orange loginbtn" style="box-shadow: 5px 7px 7px #FF7043;">ဝင်ရောက်မည်</button> -->
+							        <input type="button" class="btn btn-deep-orange loginbtn" style="box-shadow: 5px 7px 7px #FF7043;" value="ဝင်ရောက်မည်">
+							    </div>
+							<!-- </form> -->
+				         </div>
+					</div>
+
+			</section>
+			<!-- Section: Intro -->
+		</div>
+	</main>
+	<!-- Main layout -->
+
+	<!-- Footer -->
+	<footer class="page-footer pt-0 mt-5 rgba-stylish-light">
+		<!-- Copyright -->
+		<div class="footer-copyright py-3 text-center">
+			<div class="container-fluid">Developed By : <a href="www.facebook.com/mmsoftware100" target="_blank">mmSoftware100</a>
+			</div>
+			<span>Version 1.0</span>
+		</div>
+		
+	</footer>
+	<!-- Footer -->
+
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<!-- <script type="text/javascript" src="js/popper.min.js"></script> -->
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+
+	
+	<!-- <script src="js/modernizr.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/underscore.min.js"></script>
+	<script src="js/backbone.js"></script> -->
+
+
+	<!-- Initializations -->
+	<script type="text/javascript">
+		$(document).ready(function(){ //alert("jquery ok");
+
+			//===========================Login======================
+			$(document).on("click",".loginbtn",function(){ console.log("loginbtn ok");
+				var username=$("#username").val();
+				var password=$("#password").val();console.log(username+password);
+
+				var endpoint="publics/index.php";
+				var endpoint2="index.php?operation=admin&code=";
+
+				if(navigator.onLine)
+				{
+					$.post(endpoint,{operation:"loginAdmin",username:username,password:password},function(res){ 
+						///alert(res);
+						var decode=JSON.parse(res);
+						var code=decode.code;
+						var id=decode.id;
+						if(decode.status==true)
+						{
+							window.location.assign(endpoint2+code+"&id=admin");
+						}
+						else
+						{
+							alert("မှားယွင်းနေပါသည်!");
+						}
+					});	
+				}
+				else
+				{
+					alert("အင်တာနက်မရှိပါ!");
+				}
+			});
+		});
+	</script>
+	<!-- Our JavaScript -->
+	
+</body>
+</html>

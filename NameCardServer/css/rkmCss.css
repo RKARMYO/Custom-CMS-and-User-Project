@@ -1,0 +1,225 @@
+body
+{
+	background-color: rgba(0,0,0,0);
+}
+h3
+{
+	color: white;
+}
+.header
+{
+	background-color:#3F729B;
+	width: 100%;height: 45px;
+	margin: 0px;padding: 0px;
+	border-radius: 5px;
+}
+.headerDiv
+{
+	width: 100%;height: 100%;
+}
+.headerInner1
+{
+	width: 20%;height: 100%;
+	float: left;
+}
+.headerInner2
+{
+	width: 60%;height: 100%;
+	float: left;
+}
+.menuBtn:hover,.personDivInner3:hover,.profileBtn:hover,.groupChatBtn:hover,.aboutBtn:hover,.profileClose:hover,.phonePlus:hover
+,.phoneMinus:hover,.searchBtn:hover,.adminEdit:hover,.adminDelete:hover,.adminClose:hover,.aboutClose:hover
+{
+	cursor: pointer;
+}
+.menuDivHide
+{
+	width: 250px;height:600px;
+	background-color:#2BBBAD;
+	z-index: 1000;
+	position: fixed;
+	display: none;
+	border-radius: 5px;
+}
+.menuHeader,.menuHeaderInner
+{
+	width: 100%;height: 50px;
+}
+.menuHeaderInner
+{
+	margin-top: 15px;
+}
+.menuHeaderInner1
+{
+	width: 25%;height: 100%;
+	float: left;
+}
+.menuHeaderInner2
+{
+	width: 75%;height: 100%;
+	float: left;
+}
+.myicon
+{
+	color: #9933CC;
+}
+.bodyDiv,.bodyDiv1
+{
+	width: 100%;height: auto;background-color: white;
+}
+.personDiv
+{
+	width: 98%;height: 60px;
+	margin-left: 1%;margin-top: 7px;
+	border-radius: 5px;background-color: rgba(0,0,0,0.3);
+}
+.personDivInner1
+{
+	width: 25%;height: 100%;
+	float: left;
+}
+.personDivInner2
+{
+	width: 67%;height: 100%;
+	margin-left: 2%;
+	float: left;color: blue;
+}
+.personDivInner3
+{
+	width: 5%;height: 50%;
+	float: left;color: green;
+	padding-top: 10px;
+}
+.img
+{
+	width: 100%;height: 100%;border-radius:20%;
+}
+.profileDivHide,.profileDivHide1,.aboutDiv
+{
+	width: 100%;height:800px;
+	z-index: 1000;left: 0%;top: 45px;
+	position: absolute;
+	background-color: white;
+	display: none;overflow: auto;
+}
+.mainProfileDiv
+{
+	width: 98%;height: 98%;
+	margin-top: 1%;margin-left: 1%;
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 5px;box-shadow: 3px 3px 3px 3px gray;
+	overflow: auto;
+	/*margin-bottom: 50px;*/
+}
+.profileClose,.aboutClose
+{
+	font-size: 2em;color: red;padding-left: 95%;
+}
+.saveBtn
+{
+	background-color: green;
+	color: white;
+}
+.imgSrc
+{
+	width: 44%;height: 130px;margin-left: 28%;/*background-color:rgba(0,0,0,0.1);*/
+	/*background-image: url('../uploadImg/unknown.jpg');*/
+	/*background-repeat:no-repeat;
+	background-size:100% 100%;*/
+}
+#checkimage
+{
+	width: 100%;height: 100%;
+	background-image: url('../uploadImg/unknown.jpg');
+	background-repeat:no-repeat;
+	background-size:100% 100%;border-radius: 30%;
+}
+.phonePlus,.phoneMinus
+{
+	font-size: 1.5em;
+	padding-left: 5px;
+}
+.phoneMinus
+{
+	color: red;
+}
+.phonePlus
+{
+	color: blue;
+}
+.searchDiv
+{
+	width: 80%;height: 40px;
+	margin-left: 10%;margin-top: 7px;
+	border-radius: 5px;
+	/*box-shadow: 2px 2px 2px gray;*/
+}
+.searchDiv1
+{
+	width: 80%;height: 100%;
+	float: left;
+}
+.searchDiv2
+{
+	width: 20%;height: 100%;
+	float: left;
+}
+.searchBtn
+{
+	font-size: 1.5em;
+	padding-left: 15px;
+}
+.adminMenu
+{
+	width: 80%;height: 35px;
+	margin-left: 10%;margin-top: 10px;
+	border-radius: 7px;
+}
+.adminMenuInner
+{
+	width: 48%;height: 100%;margin-left: 1%;
+	float: left;border-radius: 7px;box-shadow: 2px 2px 2px gray;
+}
+#notAllowed,#allowed
+{
+	font-size: 0.8em;color: white;
+}
+#notAllowed
+{
+	background-color: #FF8800;
+}
+#allowed
+{
+	background-color: #ffbb33;
+}
+.adminBody,.adminBody1
+{
+	width: 100%;height: 700px;
+}
+.adminBody1
+{
+	display: none;
+}
+.adminEdit
+{
+	color: blue;
+}
+.adminDelete
+{
+	color: red;
+}
+.adminEditDiv,.LoadingDiv
+{
+	width: 100%;height:100%;
+	background-color:rgba(0,0,0,0.3);
+	z-index: 1000;left: 0;top: 0;
+	position: fixed;
+	display:none ;
+	border-radius: 5px;
+}
+.adminClose
+{
+	color: red;
+	padding-left: 94%;
+	font-size: 1.5em;
+}

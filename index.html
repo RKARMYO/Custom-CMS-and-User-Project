@@ -63,16 +63,10 @@
 		{
 			display: none;
 		}
-		/*.showNoti
+		.Loading,.Loading1
 		{
-			width: 200px;height: 40px;
-			z-index: 1000;position: fixed;
-			left: 50%;top: 60px;
-			font-size: 0.7em;color: blue;
-			background-color: rgba(0, 0, 0, 0.2);
-			border-radius: 5px;
-			display:none;
-		}*/
+			display:none ;
+		}
 	</style>
 </head>
 
@@ -119,10 +113,18 @@
 					          <i class="fas fa-lock prefix grey-text"></i>
 					          <input type="password" id="logpassword" class="form-control validate" placeholder="စကားဝှက်...">
 					        </div>
-
+					        
 					        <div class="modal-footer d-flex justify-content-center">
 						        <button class="btn btn-deep-orange loginbtn" style="box-shadow: 5px 7px 7px #FF7043;">ဝင်ရောက်မည်</button>
 						    </div> 
+
+						    <center>
+					        	<button class="btn btn-primary Loading" type="button" disabled>
+							  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+							  Loading...
+							</button>
+					        </center>
+
 				         </div>
 				         <span class="newaccountbtn">အကောင့်အသစ်ဖောက်ရန်နိပ်ပါ</span>
 					</div>
@@ -154,7 +156,15 @@
 
 					        <div class="modal-footer d-flex justify-content-center">
 						        <button class="btn btn-deep-orange register" style="box-shadow: 5px 7px 7px #FF7043;">ဖောက်မည်</button>
-						    </div> 
+						    </div>
+
+						    <center>
+					        	<button class="btn btn-primary Loading1" type="button" disabled>
+							  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+							  Loading...
+							</button>
+					        </center>
+
 				         </div>
 				         <span class="haveaccount">အကောင့်ရှိပါကဝင်ရောက်ရန်</span>
 					</div>
@@ -218,7 +228,8 @@
 				var password=$("#logpassword").val();console.log(username+password);
 
 				if(navigator.onLine)
-				{
+				{	
+					$(".Loading").show();
 					$.post(endpoint,{operation:"login",username:username,password:password},function(res){ 
 						//alert(res);
 						var decode=JSON.parse(res);
@@ -231,10 +242,12 @@
 						else if(decode.status=="505")
 						{
 							alert("Admin ခွင့်ပြုချက်စောင့်ပါ!");
+							$(".Loading").hide();
 						}
 						else
 						{
 							alert("မှားယွင်းနေပါသည်!");
+							$(".Loading").hide();
 						}
 					});	
 				}
@@ -245,6 +258,7 @@
 			});
 			//=======================Register===================
 			$(document).on("click",".register",function(){ console.log("register ok");
+				$(".Loading1").show();
 				var username=$("#regusername").val();
 				var usernamefake=$("#regpassword").val();
 				var password=$("#regPass").val();
@@ -257,10 +271,12 @@
 							alert("အောင်မြင်ပါသည်!");
 							$(".registerdiv").slideToggle();
 							$(".logindiv").slideToggle();
+							$(".Loading1").hide();
 						}
 						else
 						{
 							alert("မအောင်မြင်ပါ!");
+							$(".Loading1").hide();
 						}
 					});
 				}
