@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="author" content="Capt Ar Kar Myo">
+	<title>NameCard</title>
+	
+
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="css/mdb.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Material Design Bootstrap -->
+	
+	<!-- Our custom styles (optional) -->
+	<link rel="stylesheet" href="css/teamcs.css">
+	<!-- <link rel="icon" href="images/app_icon.png" type="image/gif" sizes="16x16"> -->
+
+	<style>
+		.my_card{
+			margin-bottom: 20px;
+		}
+		.no_link{
+			text-decoration: none;
+		}
+		@font-face 
+		{
+		  font-family: 'Pyidaungsu';
+		  src: URL('font/Pyidaungsu.ttf') format('truetype');
+		}
+		body
+		{
+			font-family: Pyidaungsu;
+		}
+		.foot
+		{
+			text-align: center;
+			margin-top: 20px;
+		}
+		.btn
+		{
+			color: white;
+		}
+		.h3
+		{
+			color: #047CBA;
+		}
+		.newaccountbtn,.haveaccount
+		{
+			color: #FF7043;
+		}
+		.newaccountbtn:hover,.haveaccount:hover
+		{
+			cursor: pointer;
+			font-weight: bold;
+		}
+		.registerdiv
+		{
+			display: none;
+		}
+		/*.showNoti
+		{
+			width: 200px;height: 40px;
+			z-index: 1000;position: fixed;
+			left: 50%;top: 60px;
+			font-size: 0.7em;color: blue;
+			background-color: rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			display:none;
+		}*/
+	</style>
+</head>
+
+<body class="fixed-sn white-skin">
+
+	<!-- Main Navigation -->
+	<header>
+		
+		<!-- Navbar -->
+		<nav class="navbar fixed-top navbar-expand-lg scrolling-navbar double-nav" id="nav_id">
+			<!-- SideNav slide-out button -->
+			<div class="float-left"> <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars" style="display: none;"></i></a>
+			</div>
+			<!-- Breadcrumb -->
+			<div class="title_text mr-auto align-center text-center">
+				<h4 id="header_id">Name Card User</h4>
+			</div>
+		</nav>
+		
+	</header>
+	<!-- Main Navigation -->
+
+	<!-- Main layout -->
+	<main>
+		<div class="container-fluid">
+			<!-- Section: Intro -->
+			<section id="intro_section">
+
+				<div class="card">	
+					<!--show noti-->
+					<!-- <div class="showNoti">
+						<span>😘ကြည့်ရှု့မှုအတွက် ကျေးဇူးတင်ပါတယ်!</span>
+					</div>				 -->
+					<div class="card-body logindiv">
+						<center><span class="title h3 my-4">ဝင်ရောက်ရန်</span></center>
+						 <div class="modal-body mx-3">
+					        <div class="md-form mb-5">
+					          	<i class="fas fa-user prefix grey-text"></i>
+					          	<input type="text" id="logusername" class="form-control validate" placeholder="အမည်ဝှက်...">
+					        </div>
+					   
+
+						    <div class="md-form mb-4">
+					          <i class="fas fa-lock prefix grey-text"></i>
+					          <input type="password" id="logpassword" class="form-control validate" placeholder="စကားဝှက်...">
+					        </div>
+
+					        <div class="modal-footer d-flex justify-content-center">
+						        <button class="btn btn-deep-orange loginbtn" style="box-shadow: 5px 7px 7px #FF7043;">ဝင်ရောက်မည်</button>
+						    </div> 
+				         </div>
+				         <span class="newaccountbtn">အကောင့်အသစ်ဖောက်ရန်နိပ်ပါ</span>
+					</div>
+
+
+					<div class="card-body registerdiv">
+						<center><span class="title h3 my-4">အကောင့်အသစ်ဖောက်ရန်</span></center>
+						 <div class="modal-body mx-3">
+					        <div class="md-form mb-5">
+					          	<i class="fas fa-user prefix grey-text"></i>
+					          	<input type="text" id="regusername" class="form-control validate" placeholder="အမည်..." required>
+					        </div>
+					   
+
+						    <div class="md-form mb-4">
+					          <i class="fas fa-lock prefix grey-text"></i>
+					          <input type="password" id="regpassword" class="form-control validate" placeholder="အမည်ဝှက်..." required>
+					        </div>
+
+					        <div class="md-form mb-4">
+					          <i class="fas fa-phone-alt prefix grey-text"></i>
+					          <input type="tel" id="regPhone" class="form-control validate" pattern="[0-9]{11}" placeholder="ဖုန်းနံပါတ်..." required>
+					        </div>
+
+					        <div class="md-form mb-4">
+					          <i class="fas fa-lock prefix grey-text"></i>
+					          <input type="password" id="regPass" class="form-control validate" placeholder="စကားဝှက်..." required>
+					        </div>
+
+					        <div class="modal-footer d-flex justify-content-center">
+						        <button class="btn btn-deep-orange register" style="box-shadow: 5px 7px 7px #FF7043;">ဖောက်မည်</button>
+						    </div> 
+				         </div>
+				         <span class="haveaccount">အကောင့်ရှိပါကဝင်ရောက်ရန်</span>
+					</div>
+				</div>
+				<br>
+
+			</section>
+			<!-- Section: Intro -->
+		</div>
+	</main>
+	<!-- Main layout -->
+
+	<!-- Footer -->
+	<footer class="page-footer pt-0 mt-5 rgba-stylish-light">
+		<div class="foot">
+			<span>Developed By : mmsoftware100</span><br>
+			<span>Version 1.0</span>
+		</div>
+	</footer>
+	<!-- Footer -->
+
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
+
+	
+	<script src="js/modernizr.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/underscore.min.js"></script>
+	<script src="js/backbone.js"></script>
+
+
+	<!-- Initializations -->
+	<script type="text/javascript">
+		$(document).ready(function(){ //alert("jquery ok");
+
+			var endpoint="https://www.mmsoftware100.com/NameCardServer/publics/index.php";
+			var endpoint2="https://www.mmsoftware100.com/NameCardServer/index.php?operation=home&code=";
+
+			//var endpoint="http://192.168.8.118/NameCardServer/publics/index.php";
+			//var endpoint2="http://192.168.8.118/NameCardServer/index.php?operation=home&code=";
+
+			$(document).on("click",".newaccountbtn",function(){
+				$(".registerdiv").slideToggle();
+				$(".logindiv").slideToggle();
+			});
+			$(document).on("click",".haveaccount",function(){
+				$(".registerdiv").slideToggle();
+				$(".logindiv").slideToggle();
+			});
+			//===========================Login======================
+			$(document).on("click",".loginbtn",function(){ console.log("loginbtn ok");
+				var username=$("#logusername").val();
+				var password=$("#logpassword").val();console.log(username+password);
+
+				if(navigator.onLine)
+				{
+					$.post(endpoint,{operation:"login",username:username,password:password},function(res){ 
+						//alert(res);
+						var decode=JSON.parse(res);
+						var code=decode.code;
+						var id=decode.id;
+						if(decode.status=="101")
+						{
+							window.location.assign(endpoint2+code+"&id="+id);
+						}
+						else if(decode.status=="505")
+						{
+							alert("Admin ခွင့်ပြုချက်စောင့်ပါ!");
+						}
+						else
+						{
+							alert("မှားယွင်းနေပါသည်!");
+						}
+					});	
+				}
+				else
+				{
+					alert("အင်တာနက်မရှိပါ!");
+				}
+			});
+			//=======================Register===================
+			$(document).on("click",".register",function(){ console.log("register ok");
+				var username=$("#regusername").val();
+				var usernamefake=$("#regpassword").val();
+				var password=$("#regPass").val();
+				var phone=$("#regPhone").val();
+				if(navigator.onLine)
+				{
+					$.post(endpoint,{operation:"register",username:username,usernamefake:usernamefake,password:password,phone:phone},function(res){ //alert(res);
+						if(res==true)
+						{
+							alert("အောင်မြင်ပါသည်!");
+							$(".registerdiv").slideToggle();
+							$(".logindiv").slideToggle();
+						}
+						else
+						{
+							alert("မအောင်မြင်ပါ!");
+						}
+					});
+				}
+				else
+				{
+					alert("အင်တာနက်မရှိပါ!");
+				}
+			});
+		});
+	</script>
+	<!-- Our JavaScript -->
+	
+</body>
+</html>
