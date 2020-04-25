@@ -231,7 +231,7 @@
 				{	
 					$(".Loading").show();
 					$.post(endpoint,{operation:"login",username:username,password:password},function(res){ 
-						//alert(res);
+						alert(res);
 						var decode=JSON.parse(res);
 						var code=decode.code;
 						var id=decode.id;

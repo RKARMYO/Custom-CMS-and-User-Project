@@ -32,6 +32,10 @@
 		{
 			display: block;
 		}
+		.position
+		{
+		    position:fixed;
+		}
 
 	</style>
 </head>
@@ -156,7 +160,7 @@
 			<div class="imgSrc">
 				 <center><label for='files'><div id='checkimage'>
 				 		<!-- <span style="color: white;">your image</span> -->
-		              <img id="userpf" src="#" alt="" style="width: 140px;height: 140px;border-radius: 30%;" />
+		              <img id="userpf" src="#" alt="" style="width: 140px;height: 140px;border-radius: 50%;" />
 		          </div></label>
 		          <!-- <input id="files" style="visibility:hidden;" type="file" name="profile" onchange="readURL(this);"> --></center>
 				<!-- <img class="img" src="uploadImg/a.jpg"> -->

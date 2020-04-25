@@ -27,6 +27,7 @@ $(document).ready(function(){ console.log("jquery ok");
 			$(".fakeHide").addClass("hide");
 			$(".passHide").addClass("hide");
 			$(".saveHide").addClass("hide");
+			$(".profileDivHide").addClass("position");
 
 			$('#username').prop('disabled', true);
 			$('#rank').prop('disabled', true);
@@ -61,7 +62,7 @@ $(document).ready(function(){ console.log("jquery ok");
 
 			if(img!=null)
 			{
-				$("#checkimage").html("<img id='userpf' class='img' src='uploadImg/"+decode[0]['profileImg']+"' alt='Your Image +' style='width:140px;height:140px;border-radius:30%;'>");
+				$("#checkimage").html("<img id='userpf' class='img' src='uploadImg/"+decode[0]['profileImg']+"' alt='Your Image +' style='width:140px;height:140px;border-radius:50%;'>");
 			}
 
 			var cate=decode[0]['categories'];//alert(cate);
@@ -95,6 +96,7 @@ $(document).ready(function(){ console.log("jquery ok");
 			$(".fakeHide").removeClass("hide");
 			$(".passHide").removeClass("hide");
 			$(".saveHide").removeClass("hide");
+			$(".profileDivHide").removeClass("position");
 
 			$('#username').prop('disabled', false);
 			$('#rank').prop('disabled', false);
@@ -131,7 +133,7 @@ $(document).ready(function(){ console.log("jquery ok");
 
 			if(img!=null)
 			{
-				$("#checkimage").html("<img id='userpf' class='img' src='uploadImg/"+decode[0]['profileImg']+"' alt='Your Image +' style='width:140px;height:140px;border-radius:30%;'>");
+				$("#checkimage").html("<img id='userpf' class='img' src='uploadImg/"+decode[0]['profileImg']+"' alt='Your Image +' style='width:140px;height:140px;border-radius:50%;'>");
 			}
 
 			var cate=decode[0]['categories'];//alert(cate);
@@ -158,6 +160,7 @@ $(document).ready(function(){ console.log("jquery ok");
 	});
 
 	$(document).on("submit","#updateForm",function(e){
+		$(".LoadingDiv").show();
 		e.preventDefault();console.log("form ok");
 		$.ajax({
 			url:'index.php',
@@ -170,13 +173,15 @@ $(document).ready(function(){ console.log("jquery ok");
 			{
 				if(res==true)
 				{
-					alert("အောင်မြင်ပါသည်!");
+					alert("Update Success!");
 					$(".profileDivHide").hide();
 					$(".menuDivHide").hide();
+					$(".LoadingDiv").hide();
 				}
 				else
 				{
-					alert("မှားယွင်းနေပါသည်!");
+					alert("Update Fail!");
+					$(".LoadingDiv").hide();
 				}
 			}
 		});
@@ -269,7 +274,7 @@ $(document).ready(function(){ console.log("jquery ok");
 				string+= '<table class="table"><thead><tr><th>စဉ်</th><th>အမည်</th><th>အမည်ဝှက်</th><th>ဖုန်းနံပါတ်</th><th>စကားဝှက်</th><th>ဌာန</th><th>ရာထူး</th><th>အီးမေးလ်</th><th>ပြင်</th><th>ဖျက်</th></tr></thead><tbody>';
 				for(i=0;i<count;i++)
 				{
-					string+= '<tr class=""><td>'+(i+1)+'</td><td>'+decode[i]['username']+'</td><td>'+decode[i]['usernameFake']+'</td><td>ph</td><td>'+decode[i]['password1']+'</td><td>'+decode[i]['categories']+'</td><td>'+decode[i]['rank']+'</td><td>'+decode[i]['email']+'</td><td><span class="adminEdit">edit</span><input type="hidden" value="'+decode[i]['dbId']+'"></td><th><span class="adminDelete">delete</span><input type="hidden" value="'+decode[i]['dbId']+'"></th></tr>';
+					string+= '<tr class=""><td>'+(i+1)+'</td><td>'+decode[i]['username']+'</td><td>'+decode[i]['usernameFake']+'</td><td>'+decode[i]['phoneNo']+'</td><td>'+decode[i]['password1']+'</td><td>'+decode[i]['categories']+'</td><td>'+decode[i]['rank']+'</td><td>'+decode[i]['email']+'</td><td><span class="adminEdit">edit</span><input type="hidden" value="'+decode[i]['dbId']+'"></td><th><span class="adminDelete">delete</span><input type="hidden" value="'+decode[i]['dbId']+'"></th></tr>';
 				}
 				string+= "</tbody></table>";
 				$(".adminBody1").empty();
